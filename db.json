@@ -1,0 +1,21 @@
+{
+  "products": [
+    {
+      "id": 2,
+      "name": "Quần nỉ 2025",
+      "price": 40000,
+      "imageUrl": "https://product.hstatic.net/200000690725/product/1919f653-adbf-4171-9302-8e857c103d59_bce4a23d192f430e8be21361859e674f_master.jpg",
+      "category": "Quần"
+    },
+    {
+      "name": "Trần Thị B",
+      "price": "Trần Thị B",
+      "imageUrl": "Trần Thị B",
+      "category": "Trần Thị B",
+      "id": 3
+    }
+  ],
+  "users": [
+  
+  ]
+}

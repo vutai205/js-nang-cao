@@ -1,0 +1,20 @@
+{
+  "name": "java-nang-cao-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Crud.js",
+  "scripts": {
+    "dev": "json-server-auth --watch db.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "json-server": "^0.17.4",
+    "json-server-auth": "^2.1.0"
+  }
+}
