@@ -43,6 +43,38 @@
   </div>
 
 </div>
-  
+<script>
+  const form = document.querySelector('#form')
+  form.addEventListener('submit',async(e)=>{
+    e.preventDefault();
+    const name = document.querySelector("#name").value
+    const email = document.querySelector("#email").value
+    const password = document.querySelector("#password").value
+
+    if(!name){
+      alert("Mày Tên Là Gì")
+      return
+    }
+    if(!email){
+      alert("Không Có Email")
+      return
+    }
+    if(!password){
+      alert("Thiếu Mật Khẩu")
+      return
+    }
+
+    await fetch('http://localhost:3000/register',{
+      method:"POST",
+      headers:{
+        "Content-type":"application/json"
+      },
+      body:JSON.stringify({
+        name,email,password
+      })
+    })
+    window.location.href="signin.html"
+  })
+</script>
 </body>
 </html>

@@ -1,21 +1,36 @@
 {
-  "products": [
+  "books": [
     {
-      "id": 2,
-      "name": "Quần nỉ 2025",
-      "price": 40000,
-      "imageUrl": "https://product.hstatic.net/200000690725/product/1919f653-adbf-4171-9302-8e857c103d59_bce4a23d192f430e8be21361859e674f_master.jpg",
-      "category": "Quần"
+      "id": 1,
+      "title": "Lập trình JavaScript",
+      "author": "Nguyễn Văn A",
+      "price": 95000,
+      "coverImage": "https://fastly.picsum.photos/id/685/200/300.jpg?hmac=0R7Bu0AY8CbakSrvbQHtFb_swiFQbJqQe7bKpbV6viA",
+      "genre": "Công nghệ"
     },
     {
-      "name": "Trần Thị B",
-      "price": "Trần Thị B",
-      "imageUrl": "Trần Thị B",
-      "category": "Trần Thị B",
+      "id": 2,
+      "title": "Tâm lý học đám đông",
+      "author": "Le Bon",
+      "price": 120000,
+      "coverImage": "https://fastly.picsum.photos/id/888/200/300.jpg?hmac=WJcjbSQSOOzfBpPsUKZHZzjBCJjDv43RwJ8P8Ag2xj4",
+      "genre": "Tâm lý"
+    },
+    {
+      "title": "dsjakfew",
+      "author": "wqda",
+      "price": "9022",
+      "coverImage": "https://fastly.picsum.photos/id/685/200/300.jpg?hmac=0R7Bu0AY8CbakSrvbQHtFb_swiFQbJqQe7bKpbV6viA",
+      "genre": "Công Nghê",
       "id": 3
     }
   ],
   "users": [
-  
+    {
+      "email": "taivaph51199@gmail.com",
+      "password": "$2a$10$YnVvkSKOD5Yj5YaIb5rlL.JauCqwcGXR9SYrPMh.WiUk.GxQ6ZJZS",
+      "name": "qwrg",
+      "id": 1
+    }
   ]
 }

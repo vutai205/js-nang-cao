@@ -11,7 +11,7 @@
 <!-- NAVBAR -->
 <nav class="d-flex justify-content-between align-items-center px-3 py-2 shadow-sm"
      style="background: linear-gradient(to right, #1f1f1f, #2c2c2c);">
-  <span class="text-white fw-semibold">Thêm Sản Phẩm</span>
+  <span class="text-white fw-semibold">Update Sách</span>
   <div>
     <button class="btn btn-outline-light btn-sm me-2">🌙</button>
     <a href="index.html" class="btn btn-success btn-sm">← Danh sách</a>
@@ -23,33 +23,94 @@
   <div class="card shadow-sm border-0">
 
     <div class="card-header bg-white">
-      <h5 class="mb-0">Thêm sản phẩm</h5>
+      <h5 class="mb-0">Update Sách</h5>
     </div>
 
     <div class="card-body">
 
        <form id="form">
             <div class="mb-3">
-                <label for="name" class="form-label">Tên Nhân Viên</label>
-                <input type="text" class="form-control" id="name" aria-describedby="name">
+                <label for="title" class="form-label">Tên Sách</label>
+                <input type="text" class="form-control" id="title" aria-describedby="title">
             </div>
             <div class="mb-3">
-                <label for="age" class="form-label">Tuổi</label>
-                <input type="number" class="form-control" id="age" aria-describedby="price">
-            </div>
-           <div class="mb-3">
-                <label for="position" class="form-label">Vị Trí</label>
-                <input type="text" class="form-control" id="position" aria-describedby="name">
+                <label for="author" class="form-label">Tên Tác Giả</label>
+                <input type="text" class="form-control" id="author" aria-describedby="author">
             </div>
             <div class="mb-3">
-                <label for="salary" class="form-label">Lương</label>
-                <input type="number" class="form-control" id="salary" aria-describedby="quantity">
+                <label for="price" class="form-label">Giá</label>
+                <input type="number" class="form-control" id="price" aria-describedby="price">
+            </div>
+            <div class="mb-3">
+                <label for="coverImage" class="form-label">Hình Ảnh</label>
+                <input type="text" class="form-control" id="coverImage" aria-describedby="coverImage">
+            </div>
+            <div class="mb-3">
+                <label for="genre" class="form-label">Thêr Loại</label>
+                <select type="text" class="form-control" id="genre" aria-describedby="genre">
+                  <option value="Công Nghê">Công Nghệ</option>
+                  <option value="Tâm Lý">Tâm Lý</option>
+                </select>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
   </div>
 </div>
+<script>
+  const form = document.querySelector('#form')
+  const id = new URLSearchParams(window.location.search).get("id")
+  const getBooks = async()=>{
+    const response = await fetch(`http://localhost:3000/books/${id}`)
+    const data = await response.json();
+    document.querySelector("#title").value=data.title
+    document.querySelector("#author").value=data.author
+    document.querySelector("#price").value=data.price
+    document.querySelector("#coverImage").value=data.coverImage
+    document.querySelector("#genre").value=data.genre
+  }
+  getBooks();
 
+  form.addEventListener('submit',async(e)=>{
+    e.preventDefault();
+    const title = document.querySelector("#title").value
+    const author = document.querySelector("#author").value
+    const price = document.querySelector("#price").value
+    const coverImage = document.querySelector("#coverImage").value
+    const genre = document.querySelector("#genre").value
+
+    if(!title){
+      alert("Tên Sách Đâu")
+      return
+    }
+    if(!author){
+      alert("Tác Giả Đâu")
+      return
+    }
+    if(!price){
+      alert("Sách Bán free à")
+      return
+    }
+    if(!coverImage){
+      alert("hình Ảnh")
+      return
+    }
+    if(!genre){
+      alert("Thể Loại??")
+      return
+    }
+
+    await fetch(`http://localhost:3000/books/${id}`,{
+      method:"PUT",
+      headers:{
+        "Content-type":"application/json"
+      },
+      body:JSON.stringify({
+        title,author,price,coverImage,genre
+      })
+    })
+    window.location.href="index.html"
+  })
+</script>
 </body>
 </html> 
