@@ -45,6 +45,8 @@
         name,email,password
       })
     })
+    const data =await response.json()
+    localStorage.setItem=('token',data.accessToken)
   })
 </script>
   
